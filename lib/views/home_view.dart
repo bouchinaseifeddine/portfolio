@@ -5,10 +5,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 100,
-      child: Row(
-        children: [],
+    return const Scaffold(
+      backgroundColor: Color.fromARGB(255, 245, 243, 248),
+      body: Center(
+        child: Text('sayf'),
       ),
     );
   }
