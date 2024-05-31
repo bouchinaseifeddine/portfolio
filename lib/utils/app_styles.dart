@@ -6,7 +6,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: Colors.white,
       fontSize: 26,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w500,
     );
   }
@@ -15,7 +15,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: Colors.white,
       fontSize: 32,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w600,
     );
   }
@@ -24,7 +24,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: Colors.white,
       fontSize: 24,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w700,
     );
   }
@@ -33,7 +33,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: Colors.white,
       fontSize: 15,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w700,
     );
   }
@@ -42,7 +42,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: kPrimaryColor,
       fontSize: 15,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w400,
     );
   }
@@ -51,7 +51,7 @@ abstract class AppStyles {
     return const TextStyle(
       color: kLightGrayColor,
       fontSize: 15,
-      fontFamily: kInter,
+      fontFamily: kPoppins,
       fontWeight: FontWeight.w300,
     );
   }

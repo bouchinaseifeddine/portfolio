@@ -8,7 +8,7 @@ const kborderColor = Color(0xff383838);
 const kLightGrayColor = Color(0xffd6d6d6);
 
 // fonts
-const kInter = 'Inter';
+const kPoppins = 'Poppins';
 
 // border
 final kborderRaduis20 = BorderRadius.circular(20);
