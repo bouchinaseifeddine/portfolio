@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/widgets/separator.dart';
 import 'package:portfolio/widgets/side_info.dart';
+import 'package:portfolio/widgets/social_media.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({super.key});
@@ -20,6 +21,8 @@ class SideBar extends StatelessWidget {
         child: const Column(
           children: [
             SideInfo(),
+            Separator(),
+            SocialMedia(),
             Separator(),
           ],
         ),

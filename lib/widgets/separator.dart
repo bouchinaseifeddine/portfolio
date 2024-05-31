@@ -8,7 +8,7 @@ class Separator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 30),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       width: double.infinity,
       height: 1,
       color: kborderColor,
