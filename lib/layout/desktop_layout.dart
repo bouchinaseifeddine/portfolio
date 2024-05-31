@@ -8,18 +8,19 @@ class DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 80),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Expanded(
               flex: 1,
               child: SideBar(),
             ),
             SizedBox(width: SizeConfig.defaultSize! * 1.5),
-            const Expanded(
+            Expanded(
               flex: 3,
               child: MainContent(),
             ),
