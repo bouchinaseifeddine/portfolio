@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/layout/desktop_layout.dart';
 import 'package:portfolio/layout/mobile_layout.dart';
 import 'package:portfolio/layout/tablet_layout.dart';
+import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/size_config.dart';
 import 'package:portfolio/widgets/adaptive_layout.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,8 +11,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 245, 243, 248),
+      backgroundColor: kScaffoldColor,
       body: AdaptiveLayout(
         mobileLayout: (context) => const MobileLayout(),
         tabletLayout: (context) => const TabletLayout(),
