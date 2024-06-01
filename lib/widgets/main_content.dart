@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/size_config.dart';
+import 'package:portfolio/widgets/about_tap.dart';
+import 'package:portfolio/widgets/contact_tap.dart';
+import 'package:portfolio/widgets/projects_tap.dart';
+import 'package:portfolio/widgets/resume_tap.dart';
 
 class MainContent extends StatefulWidget {
   const MainContent({super.key});
@@ -22,21 +26,25 @@ class _MainContentState extends State<MainContent> {
       length: 4,
       child: Container(
         decoration: BoxDecoration(
-            color: kBackgroundColor,
-            borderRadius: kborderRaduis20,
-            border: kborder),
-        child: Stack(
+          color: kBackgroundColor,
+          borderRadius: kborderRaduis20,
+          border: kborder,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Align(
               alignment: Alignment.topRight,
               child: Container(
                 width: 350,
                 decoration: BoxDecoration(
-                    color: kLightBackgroundColor,
-                    border: kborder,
-                    borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20))),
+                  color: kLightBackgroundColor,
+                  border: kborder,
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(20),
+                  ),
+                ),
                 child: TabBar(
                   indicator: const BoxDecoration(
                     border: null,
@@ -53,9 +61,7 @@ class _MainContentState extends State<MainContent> {
                   labelPadding: EdgeInsets.zero,
                   labelStyle: AppStyles.styleNormal15(context),
                   tabs: const [
-                    Tab(
-                      text: 'About',
-                    ),
+                    Tab(text: 'About'),
                     Tab(text: 'Resume'),
                     Tab(text: 'Projects'),
                     Tab(text: 'Contact'),
@@ -69,8 +75,9 @@ class _MainContentState extends State<MainContent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    taps[tapIndex],
+                    tapIndex == 0 ? 'About Me' : taps[tapIndex],
                     style: AppStyles.styleSemiBold32(context),
+                    textAlign: TextAlign.start,
                   ),
                   SizedBox(height: SizeConfig.defaultSize!),
                   Container(
@@ -88,15 +95,16 @@ class _MainContentState extends State<MainContent> {
                         ],
                       ),
                     ),
-                  )
-                  // const TabBarView(
-                  //   children: [
-                  //     AboutTap(),
-                  //     ResumeTap(),
-                  //     ProjectsTap(),
-                  //     ContactTap(),
-                  //   ],
-                  // ),
+                  ),
+                  IndexedStack(
+                    index: tapIndex,
+                    children: const [
+                      AboutTap(),
+                      ResumeTap(),
+                      ProjectsTap(),
+                      ContactTap(),
+                    ],
+                  ),
                 ],
               ),
             ),
