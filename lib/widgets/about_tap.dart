@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/size_config.dart';
 import 'package:portfolio/widgets/services_section.dart';
+import 'package:portfolio/widgets/skills_section.dart';
 
 class AboutTap extends StatelessWidget {
   const AboutTap({super.key});
@@ -26,6 +27,8 @@ class AboutTap extends StatelessWidget {
             'Whether you\'re an entrepreneur with a groundbreaking app idea or a business owner looking to enhance your online presence, I\'m here to turn your vision into reality.'),
         SizedBox(height: SizeConfig.defaultSize! * 2),
         const ServicesSection(),
+        SizedBox(height: SizeConfig.defaultSize! * 2),
+        const SkillsSection()
       ],
     );
   }

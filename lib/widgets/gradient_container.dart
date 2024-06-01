@@ -6,16 +6,20 @@ class GradientContainer extends StatelessWidget {
     super.key,
     required this.child,
     required this.padding,
+    this.borderRaduis,
   });
 
   final Widget child;
   final double padding;
+  final double? borderRaduis;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-          borderRadius: kborderRaduis12,
+          borderRadius: borderRaduis != null
+              ? BorderRadius.circular(borderRaduis!)
+              : kborderRaduis12,
           gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

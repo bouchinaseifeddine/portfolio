@@ -15,9 +15,9 @@ class SideMoreInfo extends StatelessWidget {
       children: [
         Row(
           children: [
-            const GradientContainer(
+            GradientContainer(
               padding: 8,
-              child: FaIcon(
+              child: const FaIcon(
                 FontAwesomeIcons.envelope,
                 color: kIconsColor,
                 size: 18,
@@ -58,9 +58,9 @@ class SideMoreInfo extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
           children: [
-            const GradientContainer(
+            GradientContainer(
               padding: 8,
-              child: FaIcon(
+              child: const FaIcon(
                 FontAwesomeIcons.phone,
                 color: kIconsColor,
                 size: 18,
@@ -101,9 +101,9 @@ class SideMoreInfo extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
           children: [
-            const GradientContainer(
+            GradientContainer(
               padding: 8,
-              child: FaIcon(
+              child: const FaIcon(
                 FontAwesomeIcons.locationArrow,
                 color: kIconsColor,
                 size: 18,
