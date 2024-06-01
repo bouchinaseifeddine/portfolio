@@ -4,6 +4,7 @@ import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/functions/url_launcher.dart';
 import 'package:portfolio/utils/size_config.dart';
+import 'package:portfolio/widgets/gradient_container.dart';
 
 class SideMoreInfo extends StatelessWidget {
   const SideMoreInfo({super.key});
@@ -14,22 +15,8 @@ class SideMoreInfo extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  borderRadius: kborderRaduis12,
-                  gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(67, 67, 134, 0.941),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                        Color.fromRGBO(38, 38, 89, 0.479),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                      ])),
-              child: const FaIcon(
+            const GradientContainer(
+              child: FaIcon(
                 FontAwesomeIcons.envelope,
                 color: kIconsColor,
                 size: 18,
@@ -70,22 +57,8 @@ class SideMoreInfo extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  borderRadius: kborderRaduis12,
-                  gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(67, 67, 134, 0.941),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                        Color.fromRGBO(38, 38, 89, 0.479),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                      ])),
-              child: const FaIcon(
+            const GradientContainer(
+              child: FaIcon(
                 FontAwesomeIcons.phone,
                 color: kIconsColor,
                 size: 18,
@@ -126,27 +99,12 @@ class SideMoreInfo extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  borderRadius: kborderRaduis12,
-                  gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromRGBO(67, 67, 134, 0.941),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                        Color.fromRGBO(38, 38, 89, 0.479),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(38, 38, 38, 0),
-                        Color.fromRGBO(68, 68, 139, 0.671),
-                      ])),
-              child: const FaIcon(
-                FontAwesomeIcons.locationArrow,
-                color: kIconsColor,
-                size: 18,
-              ),
-            ),
+            const GradientContainer(
+                child: FaIcon(
+              FontAwesomeIcons.locationArrow,
+              color: kIconsColor,
+              size: 18,
+            )),
             SizedBox(width: SizeConfig.defaultSize!),
             Expanded(
               child: Column(
