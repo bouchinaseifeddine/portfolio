@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/size_config.dart';
+import 'package:portfolio/widgets/services_section.dart';
 
 class AboutTap extends StatelessWidget {
   const AboutTap({super.key});
@@ -8,6 +9,7 @@ class AboutTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: SizeConfig.defaultSize),
         Text(
@@ -22,6 +24,8 @@ class AboutTap extends StatelessWidget {
         Text(
             style: AppStyles.styleLight15(context),
             'Whether you\'re an entrepreneur with a groundbreaking app idea or a business owner looking to enhance your online presence, I\'m here to turn your vision into reality.'),
+        SizedBox(height: SizeConfig.defaultSize! * 2),
+        const ServicesSection(),
       ],
     );
   }
