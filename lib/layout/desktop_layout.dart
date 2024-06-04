@@ -20,7 +20,7 @@ class DesktopLayout extends StatelessWidget {
               child: SideBar(),
             ),
             SizedBox(width: SizeConfig.defaultSize! * 1.5),
-            Expanded(
+            const Expanded(
               flex: 3,
               child: MainContent(),
             ),

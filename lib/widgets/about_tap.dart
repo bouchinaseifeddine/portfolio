@@ -28,7 +28,7 @@ class AboutTap extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize! * 2),
         const ServicesSection(),
         SizedBox(height: SizeConfig.defaultSize! * 2),
-        const SkillsSection()
+        const SkillsSection(),
       ],
     );
   }
