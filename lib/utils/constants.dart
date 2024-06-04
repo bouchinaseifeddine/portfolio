@@ -7,7 +7,7 @@ const kBackgroundColor = Color(0xff1E1E1F);
 const kPrimaryColor = Color.fromARGB(255, 107, 39, 243);
 const kborderColor = Color(0xff383838);
 const kLightGrayColor = Color(0xffd6d6d6);
-const kVeryLightGrayColor = Color(0xd6d6d6b3);
+const klightWhiteColor = Color(0xfffafafa);
 const kLightBackgroundColor = Color(0xff2b2b2c);
 const kIconsColor = Color.fromARGB(255, 132, 106, 238);
 

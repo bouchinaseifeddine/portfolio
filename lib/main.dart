@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/app_theme.dart';
 import 'package:portfolio/views/home_view.dart';
 
 void main() {
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Seifeddine Portfolio',
-      home: HomeView(),
+      home: const HomeView(),
+      theme: AppTheme.darkTheme,
     );
   }
 }
