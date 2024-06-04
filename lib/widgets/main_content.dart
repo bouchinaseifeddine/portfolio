@@ -81,7 +81,7 @@ class _MainContentState extends State<MainContent> {
                   ),
                   SizedBox(height: SizeConfig.defaultSize!),
                   Container(
-                    width: 35,
+                    width: 40,
                     height: 5,
                     decoration: BoxDecoration(
                       borderRadius: kborderRaduis32,
@@ -96,14 +96,22 @@ class _MainContentState extends State<MainContent> {
                       ),
                     ),
                   ),
-                  IndexedStack(
-                    index: tapIndex,
-                    children: const [
-                      AboutTap(),
-                      ResumeTap(),
-                      ProjectsTap(),
-                      ContactTap(),
-                    ],
+                  SizedBox(height: SizeConfig.defaultSize!),
+                  Visibility(
+                    visible: tapIndex == 0,
+                    child: const AboutTap(),
+                  ),
+                  Visibility(
+                    visible: tapIndex == 1,
+                    child: const ResumeTap(),
+                  ),
+                  Visibility(
+                    visible: tapIndex == 2,
+                    child: const ProjectsTap(),
+                  ),
+                  Visibility(
+                    visible: tapIndex == 3,
+                    child: const ContactTap(),
                   ),
                 ],
               ),
