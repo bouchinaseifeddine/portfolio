@@ -60,12 +60,7 @@ class _MainContentState extends State<MainContent> {
                   automaticIndicatorColorAdjustment: false,
                   labelPadding: EdgeInsets.zero,
                   labelStyle: AppStyles.styleNormal15(context),
-                  tabs: const [
-                    Tab(text: 'About'),
-                    Tab(text: 'Resume'),
-                    Tab(text: 'Projects'),
-                    Tab(text: 'Contact'),
-                  ],
+                  tabs: taps.map((label) => Tab(text: label)).toList(),
                 ),
               ),
             ),
@@ -97,21 +92,13 @@ class _MainContentState extends State<MainContent> {
                     ),
                   ),
                   SizedBox(height: SizeConfig.defaultSize!),
-                  Visibility(
-                    visible: tapIndex == 0,
-                    child: const AboutTap(),
-                  ),
-                  Visibility(
-                    visible: tapIndex == 1,
-                    child: const ResumeTap(),
-                  ),
-                  Visibility(
-                    visible: tapIndex == 2,
-                    child: const ProjectsTap(),
-                  ),
-                  Visibility(
-                    visible: tapIndex == 3,
-                    child: const ContactTap(),
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder:
+                        (Widget child, Animation<double> animation) {
+                      return FadeTransition(opacity: animation, child: child);
+                    },
+                    child: getTapWidget(tapIndex),
                   ),
                 ],
               ),
@@ -120,5 +107,20 @@ class _MainContentState extends State<MainContent> {
         ),
       ),
     );
+  }
+
+  Widget getTapWidget(int index) {
+    switch (index) {
+      case 0:
+        return const AboutTap(key: ValueKey<int>(0));
+      case 1:
+        return const ResumeTap(key: ValueKey<int>(1));
+      case 2:
+        return const ProjectsTap(key: ValueKey<int>(2));
+      case 3:
+        return const ContactTap(key: ValueKey<int>(3));
+      default:
+        return const AboutTap(key: ValueKey<int>(0));
+    }
   }
 }

@@ -44,11 +44,11 @@ class _ProjectItemState extends State<ProjectItem> {
                 child: ClipRRect(
                   borderRadius: kborderRaduis12,
                   child: AnimatedScale(
-                    duration: const Duration(milliseconds: 250),
+                    duration: const Duration(milliseconds: 200),
                     scale: isHovered ? 1.15 : 1.0,
                     child: AnimatedOpacity(
                       opacity: isHovered ? 0.6 : 1.0,
-                      duration: const Duration(milliseconds: 250),
+                      duration: const Duration(milliseconds: 200),
                       child: Image.asset(
                         widget.project.image,
                         fit: BoxFit.fill,
@@ -59,7 +59,7 @@ class _ProjectItemState extends State<ProjectItem> {
               ),
               AnimatedOpacity(
                 opacity: isHovered ? 1.0 : 0.0,
-                duration: const Duration(milliseconds: 100),
+                duration: const Duration(milliseconds: 150),
                 child: Container(
                   width: 50,
                   decoration: BoxDecoration(
@@ -72,7 +72,7 @@ class _ProjectItemState extends State<ProjectItem> {
                       scale: isHovered ? 1.0 : 0.0,
                       child: const Icon(
                         Icons.visibility,
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 136, 78, 253),
                       ),
                     ),
                   ),
