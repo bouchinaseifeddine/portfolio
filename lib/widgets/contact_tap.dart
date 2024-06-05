@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/utils/app_styles.dart';
-import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/size_config.dart';
 import 'package:portfolio/widgets/gradient_container.dart';
 
