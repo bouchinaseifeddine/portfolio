@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/constants.dart';
+import 'package:portfolio/utils/functions/url_launcher.dart';
 import 'package:portfolio/utils/size_config.dart';
 import 'package:portfolio/widgets/gradient_container.dart';
 import 'package:timeline_tile/timeline_tile.dart';
@@ -16,6 +17,7 @@ class MyTimeLineTile extends StatelessWidget {
     required this.isHeader,
     this.date,
     this.text,
+    this.link,
   });
 
   final String title;
@@ -24,11 +26,14 @@ class MyTimeLineTile extends StatelessWidget {
   final bool isFirst;
   final bool isLast;
   final bool isHeader;
+  final String? link;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: TimelineTile(
-        afterLineStyle: const LineStyle(thickness: 0.5),
+        afterLineStyle: const LineStyle(
+          thickness: 0.5,
+        ),
         beforeLineStyle: const LineStyle(thickness: 0.5),
         alignment: TimelineAlign.start,
         isFirst: isFirst,
@@ -77,8 +82,7 @@ class MyTimeLineTile extends StatelessWidget {
               ),
         endChild: isHeader
             ? Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Text(
                   title,
                   style: AppStyles.styleBold24(context),
@@ -90,10 +94,27 @@ class MyTimeLineTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: AppStyles.styleBold15(context),
-                    ),
+                    link != null
+                        ? Row(
+                            children: [
+                              Text(
+                                title,
+                                style: AppStyles.styleBold15(context),
+                              ),
+                              TextButton(
+                                  onPressed: () async {
+                                    await urlLauncher(Uri.parse(link!));
+                                  },
+                                  child: Text('Click Here',
+                                      textAlign: TextAlign.start,
+                                      style: AppStyles.styleBold15(context)
+                                          .copyWith(color: kPrimaryColor))),
+                            ],
+                          )
+                        : Text(
+                            title,
+                            style: AppStyles.styleBold15(context),
+                          ),
                     SizedBox(height: SizeConfig.defaultSize! / 2),
                     Text(
                       date!,
