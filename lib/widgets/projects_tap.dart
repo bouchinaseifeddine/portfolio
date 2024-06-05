@@ -5,11 +5,14 @@ class ProjectsTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'center 3 ',
-        style: TextStyle(color: Colors.white),
-      ),
+    return GridView.count(
+      crossAxisCount: 3,
+      shrinkWrap: true,
+      childAspectRatio: 3,
+      mainAxisSpacing: 16,
+      crossAxisSpacing: 16,
+      physics: const NeverScrollableScrollPhysics(),
+      children: const [],
     );
   }
 }
