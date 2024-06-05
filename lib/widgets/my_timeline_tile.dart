@@ -94,12 +94,12 @@ class MyTimeLineTile extends StatelessWidget {
                       title,
                       style: AppStyles.styleBold15(context),
                     ),
-                    SizedBox(height: SizeConfig.defaultSize),
+                    SizedBox(height: SizeConfig.defaultSize! / 2),
                     Text(
                       date!,
                       style: AppStyles.styleNormal15(context),
                     ),
-                    SizedBox(height: SizeConfig.defaultSize),
+                    SizedBox(height: SizeConfig.defaultSize! / 2),
                     Text(
                       text!,
                       style: AppStyles.styleLight15(context),
