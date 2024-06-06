@@ -31,6 +31,7 @@ class _ContactTapState extends State<ContactTap> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,10 +46,45 @@ class _ContactTapState extends State<ContactTap> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
+              width > 800
+                  ? Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            style: const TextStyle(color: Colors.white),
+                            controller: _nameController,
+                            decoration: const InputDecoration(
+                              hintText: 'Full name',
+                            ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your name';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        SizedBox(width: SizeConfig.defaultSize! * 1.5),
+                        Expanded(
+                          child: TextFormField(
+                            style: const TextStyle(color: Colors.white),
+                            controller: _emailController,
+                            decoration: const InputDecoration(
+                                hintText: 'Email address'),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your email';
+                              } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                  .hasMatch(value)) {
+                                return 'Please enter a valid email address';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                      ],
+                    )
+                  : TextFormField(
                       style: const TextStyle(color: Colors.white),
                       controller: _nameController,
                       decoration: const InputDecoration(
@@ -61,26 +97,19 @@ class _ContactTapState extends State<ContactTap> {
                         return null;
                       },
                     ),
-                  ),
-                  SizedBox(width: SizeConfig.defaultSize! * 1.5),
-                  Expanded(
-                    child: TextFormField(
-                      style: const TextStyle(color: Colors.white),
-                      controller: _emailController,
-                      decoration:
-                          const InputDecoration(hintText: 'Email address'),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your email';
-                        } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
-                            .hasMatch(value)) {
-                          return 'Please enter a valid email address';
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ],
+              SizedBox(height: SizeConfig.defaultSize! * 1.5),
+              TextFormField(
+                style: const TextStyle(color: Colors.white),
+                controller: _emailController,
+                decoration: const InputDecoration(hintText: 'Email address'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your email';
+                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    return 'Please enter a valid email address';
+                  }
+                  return null;
+                },
               ),
               SizedBox(height: SizeConfig.defaultSize! * 1.5),
               TextFormField(
