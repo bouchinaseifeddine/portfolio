@@ -11,13 +11,16 @@ class SideMoreInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GradientContainer(
+            const GradientContainer(
               padding: 8,
-              child: const FaIcon(
+              child: FaIcon(
                 FontAwesomeIcons.envelope,
                 color: kIconsColor,
                 size: 18,
@@ -57,10 +60,11 @@ class SideMoreInfo extends StatelessWidget {
         ),
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GradientContainer(
+            const GradientContainer(
               padding: 8,
-              child: const FaIcon(
+              child: FaIcon(
                 FontAwesomeIcons.phone,
                 color: kIconsColor,
                 size: 18,
@@ -100,10 +104,11 @@ class SideMoreInfo extends StatelessWidget {
         ),
         SizedBox(height: SizeConfig.defaultSize! * 1.5),
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GradientContainer(
+            const GradientContainer(
               padding: 8,
-              child: const FaIcon(
+              child: FaIcon(
                 FontAwesomeIcons.locationArrow,
                 color: kIconsColor,
                 size: 18,

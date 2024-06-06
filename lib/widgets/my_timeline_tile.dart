@@ -95,21 +95,25 @@ class MyTimeLineTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     link != null
-                        ? Row(
-                            children: [
-                              Text(
-                                title,
-                                style: AppStyles.styleBold15(context),
-                              ),
-                              TextButton(
-                                  onPressed: () async {
-                                    await urlLauncher(Uri.parse(link!));
-                                  },
-                                  child: Text('Click Here',
-                                      textAlign: TextAlign.start,
-                                      style: AppStyles.styleBold15(context)
-                                          .copyWith(color: kPrimaryColor))),
-                            ],
+                        ? Expanded(
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    title,
+                                    style: AppStyles.styleBold15(context),
+                                  ),
+                                ),
+                                TextButton(
+                                    onPressed: () async {
+                                      await urlLauncher(Uri.parse(link!));
+                                    },
+                                    child: Text('Click Here',
+                                        textAlign: TextAlign.start,
+                                        style: AppStyles.styleBold15(context)
+                                            .copyWith(color: kPrimaryColor))),
+                              ],
+                            ),
                           )
                         : Text(
                             title,

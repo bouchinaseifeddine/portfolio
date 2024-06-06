@@ -7,8 +7,11 @@ class SocialMedia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment:
+          width < 1200 ? MainAxisAlignment.start : MainAxisAlignment.center,
       children: [
         IconButton(
           alignment: Alignment.topCenter,
