@@ -1,3 +1,4 @@
+import 'package:auto_height_grid_view/auto_height_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/data/projects.dart';
 
@@ -9,19 +10,24 @@ class ProjectsTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         SizedBox(height: SizeConfig.defaultSize),
-        GridView.count(
-          crossAxisCount: 3,
+        AutoHeightGridView(
+          crossAxisCount: width < 1200
+              ? width < 800
+                  ? 1
+                  : 2
+              : 3,
           shrinkWrap: true,
-          childAspectRatio: 1,
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
           physics: const NeverScrollableScrollPhysics(),
-          children: [
-            for (final project in projects) ProjectItem(project: project),
-          ],
+          itemCount: projects.length,
+          builder: (BuildContext context, int index) {
+            return ProjectItem(project: projects[index]);
+          },
         ),
       ],
     );

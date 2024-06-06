@@ -52,6 +52,7 @@ class _ProjectItemState extends State<ProjectItem> {
                       child: Image.asset(
                         widget.project.image,
                         fit: BoxFit.fill,
+                        width: double.infinity,
                       ),
                     ),
                   ),
