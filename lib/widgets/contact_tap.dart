@@ -46,8 +46,41 @@ class _ContactTapState extends State<ContactTap> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              width > 800
-                  ? Row(
+              width < 800
+                  ? Column(
+                      children: [
+                        TextFormField(
+                          style: const TextStyle(color: Colors.white),
+                          controller: _nameController,
+                          decoration: const InputDecoration(
+                            hintText: 'Full name',
+                          ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your name';
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(height: SizeConfig.defaultSize! * 1.5),
+                        TextFormField(
+                          style: const TextStyle(color: Colors.white),
+                          controller: _emailController,
+                          decoration:
+                              const InputDecoration(hintText: 'Email address'),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter your email';
+                            } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                .hasMatch(value)) {
+                              return 'Please enter a valid email address';
+                            }
+                            return null;
+                          },
+                        )
+                      ],
+                    )
+                  : Row(
                       children: [
                         Expanded(
                           child: TextFormField(
@@ -83,34 +116,7 @@ class _ContactTapState extends State<ContactTap> {
                           ),
                         ),
                       ],
-                    )
-                  : TextFormField(
-                      style: const TextStyle(color: Colors.white),
-                      controller: _nameController,
-                      decoration: const InputDecoration(
-                        hintText: 'Full name',
-                      ),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your name';
-                        }
-                        return null;
-                      },
                     ),
-              SizedBox(height: SizeConfig.defaultSize! * 1.5),
-              TextFormField(
-                style: const TextStyle(color: Colors.white),
-                controller: _emailController,
-                decoration: const InputDecoration(hintText: 'Email address'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
-                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email address';
-                  }
-                  return null;
-                },
-              ),
               SizedBox(height: SizeConfig.defaultSize! * 1.5),
               TextFormField(
                 style: const TextStyle(color: Colors.white),
