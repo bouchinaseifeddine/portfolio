@@ -35,32 +35,34 @@ class _MainContentState extends State<MainContent> {
           children: [
             Align(
               alignment: Alignment.topRight,
-              child: Container(
-                width: 350,
-                decoration: BoxDecoration(
-                  color: kLightBackgroundColor,
-                  border: kborder,
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
+              child: IntrinsicWidth(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: kLightBackgroundColor,
+                    border: kborder,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20),
+                    ),
                   ),
-                ),
-                child: TabBar(
-                  indicator: const BoxDecoration(
-                    border: null,
+                  child: TabBar(
+                    indicator: const BoxDecoration(
+                      border: null,
+                    ),
+                    onTap: (value) {
+                      setState(() {
+                        tapIndex = value;
+                      });
+                    },
+                    dividerColor: Colors.transparent,
+                    unselectedLabelColor: Colors.white,
+                    indicatorPadding: EdgeInsets.zero,
+                    automaticIndicatorColorAdjustment: false,
+                    labelPadding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    labelStyle: AppStyles.styleNormal15(context),
+                    tabs: taps.map((label) => Tab(text: label)).toList(),
                   ),
-                  onTap: (value) {
-                    setState(() {
-                      tapIndex = value;
-                    });
-                  },
-                  dividerColor: Colors.transparent,
-                  unselectedLabelColor: Colors.white,
-                  indicatorPadding: EdgeInsets.zero,
-                  automaticIndicatorColorAdjustment: false,
-                  labelPadding: EdgeInsets.zero,
-                  labelStyle: AppStyles.styleNormal15(context),
-                  tabs: taps.map((label) => Tab(text: label)).toList(),
                 ),
               ),
             ),

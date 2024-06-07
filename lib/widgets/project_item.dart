@@ -37,7 +37,6 @@ class _ProjectItemState extends State<ProjectItem> {
               AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeInOut,
-                height: 150,
                 decoration: BoxDecoration(
                   borderRadius: kborderRaduis12,
                 ),
@@ -49,10 +48,13 @@ class _ProjectItemState extends State<ProjectItem> {
                     child: AnimatedOpacity(
                       opacity: isHovered ? 0.6 : 1.0,
                       duration: const Duration(milliseconds: 200),
-                      child: Image.asset(
-                        widget.project.image,
-                        fit: BoxFit.fill,
-                        width: double.infinity,
+                      child: AspectRatio(
+                        aspectRatio: (1 / .5),
+                        child: Image.asset(
+                          widget.project.image,
+                          fit: BoxFit.fill,
+                          width: double.infinity,
+                        ),
                       ),
                     ),
                   ),
