@@ -2,55 +2,73 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/constants.dart';
 
 abstract class AppStyles {
-  static TextStyle styleMedium26(context) {
-    return const TextStyle(
+  static double _getScalingFactor(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth > 600) {
+      return 1.0;
+    } else if (screenWidth > 400) {
+      return 0.85;
+    } else {
+      return 0.65;
+    }
+  }
+
+  static TextStyle styleMedium26(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: Colors.white,
-      fontSize: 26,
+      fontSize: 26 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w500,
     );
   }
 
-  static TextStyle styleSemiBold32(context) {
-    return const TextStyle(
+  static TextStyle styleSemiBold32(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: Colors.white,
-      fontSize: 32,
+      fontSize: 32 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w600,
     );
   }
 
-  static TextStyle styleBold24(context) {
-    return const TextStyle(
+  static TextStyle styleBold24(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: Colors.white,
-      fontSize: 24,
+      fontSize: 24 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w700,
     );
   }
 
-  static TextStyle styleBold15(context) {
-    return const TextStyle(
+  static TextStyle styleBold15(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: Colors.white,
-      fontSize: 15,
+      fontSize: 15 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w700,
     );
   }
 
-  static TextStyle styleNormal15(context) {
-    return const TextStyle(
+  static TextStyle styleNormal15(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: kPrimaryColor,
-      fontSize: 15,
+      fontSize: 15 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w400,
     );
   }
 
-  static TextStyle styleLight15(context) {
-    return const TextStyle(
+  static TextStyle styleLight15(BuildContext context) {
+    double scalingFactor = _getScalingFactor(context);
+    return TextStyle(
       color: kLightGrayColor,
-      fontSize: 15,
+      fontSize: 15 * scalingFactor,
       fontFamily: kPoppins,
       fontWeight: FontWeight.w300,
     );

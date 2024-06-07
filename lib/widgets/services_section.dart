@@ -50,6 +50,7 @@ class ServicesSection extends StatelessWidget {
                               services[index].title,
                               style: AppStyles.styleSemiBold32(context)
                                   .copyWith(fontSize: 18),
+                              textAlign: TextAlign.center,
                             ),
                             SizedBox(height: SizeConfig.defaultSize),
                             Text(
