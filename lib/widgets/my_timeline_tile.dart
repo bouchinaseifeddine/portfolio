@@ -43,15 +43,12 @@ class MyTimeLineTile extends StatelessWidget {
             ? const IndicatorStyle(
                 width: 50,
                 height: 50,
-                // padding: EdgeInsets.symmetric(
-                //   horizontal: 8,
-                // ),
                 indicator: GradientContainer(
                   padding: 16,
                   child: FaIcon(
                     FontAwesomeIcons.bookOpen,
                     color: Color.fromARGB(255, 136, 78, 253),
-                    size: 18,
+                    size: 15,
                   ),
                 ),
               )
