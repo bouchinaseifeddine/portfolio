@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/utils/app_styles.dart';
+import 'package:portfolio/utils/functions/send_email.dart';
+import 'package:portfolio/utils/functions/show_snackbar.dart';
 import 'package:portfolio/utils/size_config.dart';
 import 'package:portfolio/widgets/gradient_container.dart';
 
@@ -27,7 +29,22 @@ class _ContactTapState extends State<ContactTap> {
     super.dispose();
   }
 
-  void _submitForm() {}
+  void _submitForm() async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        final response = await sendEmail(
+          email: _emailController.text,
+          message: _messageController.text,
+          name: _nameController.text,
+        );
+
+        showSnackBar(context, 'Oh Hey!', 'Email sent successfully!', true);
+      } catch (e) {
+        showSnackBar(
+            context, 'Oh No!', 'Failed to send email! try again.', false);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +149,7 @@ class _ContactTapState extends State<ContactTap> {
               ),
               const SizedBox(height: 20),
               InkWell(
-                onTap: () {},
+                onTap: _submitForm,
                 child: GradientContainer(
                     padding: 16,
                     child: Row(
