@@ -29,6 +29,7 @@ class MyTimeLineTile extends StatelessWidget {
   final String? link;
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return SizedBox(
       child: TimelineTile(
         afterLineStyle: const LineStyle(
@@ -96,24 +97,51 @@ class MyTimeLineTile extends StatelessWidget {
                   children: [
                     link != null
                         ? Expanded(
-                            child: Row(
-                              children: [
-                                Flexible(
-                                  child: Text(
-                                    title,
-                                    style: AppStyles.styleBold15(context),
+                            child: width < 800
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Flexible(
+                                        child: Text(
+                                          title,
+                                          style: AppStyles.styleBold15(context),
+                                        ),
+                                      ),
+                                      TextButton(
+                                          onPressed: () async {
+                                            await urlLauncher(Uri.parse(link!));
+                                          },
+                                          child: Text('Click Here',
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  AppStyles.styleBold15(context)
+                                                      .copyWith(
+                                                          color:
+                                                              kPrimaryColor))),
+                                    ],
+                                  )
+                                : Row(
+                                    children: [
+                                      Flexible(
+                                        child: Text(
+                                          title,
+                                          style: AppStyles.styleBold15(context),
+                                        ),
+                                      ),
+                                      TextButton(
+                                          onPressed: () async {
+                                            await urlLauncher(Uri.parse(link!));
+                                          },
+                                          child: Text('Click Here',
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  AppStyles.styleBold15(context)
+                                                      .copyWith(
+                                                          color:
+                                                              kPrimaryColor))),
+                                    ],
                                   ),
-                                ),
-                                TextButton(
-                                    onPressed: () async {
-                                      await urlLauncher(Uri.parse(link!));
-                                    },
-                                    child: Text('Click Here',
-                                        textAlign: TextAlign.start,
-                                        style: AppStyles.styleBold15(context)
-                                            .copyWith(color: kPrimaryColor))),
-                              ],
-                            ),
                           )
                         : Text(
                             title,
