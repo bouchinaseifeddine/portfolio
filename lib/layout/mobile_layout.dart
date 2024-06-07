@@ -27,7 +27,7 @@ class _MobileLayoutState extends State<MobileLayout> {
         children: [
           SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+              padding: const EdgeInsets.all(15),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,8 @@ class _MobileLayoutState extends State<MobileLayout> {
                   indicatorPadding: EdgeInsets.zero,
                   automaticIndicatorColorAdjustment: false,
                   labelPadding: const EdgeInsets.symmetric(vertical: 5),
-                  labelStyle: AppStyles.styleNormal15(context),
+                  labelStyle:
+                      AppStyles.styleNormal15(context).copyWith(fontSize: 12),
                   tabs: taps.map((label) => Tab(text: label)).toList(),
                 ),
               ),
