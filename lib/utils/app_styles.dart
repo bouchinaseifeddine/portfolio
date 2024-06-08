@@ -8,9 +8,9 @@ abstract class AppStyles {
     if (screenWidth > 600) {
       return 1.0;
     } else if (screenWidth > 400) {
-      return 0.85;
+      return 0.9;
     } else {
-      return 0.75;
+      return 0.8;
     }
   }
 
