@@ -49,7 +49,7 @@ class _MobileLayoutState extends State<MobileLayout> {
             left: 0,
             right: 0,
             child: Opacity(
-              opacity: 0.8,
+              opacity: 0.9,
               child: Container(
                 decoration: BoxDecoration(
                   color: kLightBackgroundColor,
