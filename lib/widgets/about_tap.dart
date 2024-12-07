@@ -14,7 +14,7 @@ class AboutTap extends StatelessWidget {
       children: [
         SizedBox(height: SizeConfig.defaultSize),
         Text(
-          'Hello! I\'m Seif Eddine Bouchina, a dedicated and passionate student pursuing a Bachelor in Computer Science from Badji Mokhtar University, Annaba. With a strong interest in the development & AI side of the IT world.',
+          "Hello! I’m Seif Eddine Bouchina, a dedicated and passionate Computer Science graduate from Badji Mokhtar University, Annaba. With a strong interest in Software development and AI, I am eager to contribute to and grow within the ever-evolving IT world.",
           style: AppStyles.styleLight15(context),
         ),
         SizedBox(height: SizeConfig.defaultSize),

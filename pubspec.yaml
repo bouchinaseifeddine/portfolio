@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.3
   flutter_sticky_widgets: ^0.0.3
   flutter_svg: ^2.0.10+1
   font_awesome_flutter: ^10.7.0
@@ -46,6 +47,15 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_native_splash:
+  android: false
+  ios: false
+  web: true
+  color_web: "#121212"
+  color: "#121212"
+  image_web: "assets/images/splash.gif"
+  web_image_mode: center
+  icon_background_color: "#121212"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

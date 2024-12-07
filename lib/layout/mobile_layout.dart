@@ -48,35 +48,32 @@ class _MobileLayoutState extends State<MobileLayout> {
             bottom: 0,
             left: 0,
             right: 0,
-            child: Opacity(
-              opacity: 0.9,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: kLightBackgroundColor,
-                  border: kborder,
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    topLeft: Radius.circular(20),
-                  ),
+            child: Container(
+              decoration: BoxDecoration(
+                color: kLightBackgroundColor,
+                border: kborder,
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  topLeft: Radius.circular(20),
                 ),
-                child: TabBar(
-                  indicator: const BoxDecoration(
-                    border: null,
-                  ),
-                  onTap: (value) {
-                    setState(() {
-                      tapIndex = value;
-                    });
-                  },
-                  dividerColor: Colors.transparent,
-                  unselectedLabelColor: Colors.white,
-                  indicatorPadding: EdgeInsets.zero,
-                  automaticIndicatorColorAdjustment: false,
-                  labelPadding: const EdgeInsets.symmetric(vertical: 5),
-                  labelStyle:
-                      AppStyles.styleNormal15(context).copyWith(fontSize: 12),
-                  tabs: taps.map((label) => Tab(text: label)).toList(),
+              ),
+              child: TabBar(
+                indicator: const BoxDecoration(
+                  border: null,
                 ),
+                onTap: (value) {
+                  setState(() {
+                    tapIndex = value;
+                  });
+                },
+                dividerColor: Colors.transparent,
+                unselectedLabelColor: Colors.white,
+                indicatorPadding: EdgeInsets.zero,
+                automaticIndicatorColorAdjustment: false,
+                labelPadding: const EdgeInsets.symmetric(vertical: 5),
+                labelStyle:
+                    AppStyles.styleNormal15(context).copyWith(fontSize: 12),
+                tabs: taps.map((label) => Tab(text: label)).toList(),
               ),
             ),
           ),

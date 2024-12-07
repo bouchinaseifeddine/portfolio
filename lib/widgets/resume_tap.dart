@@ -13,9 +13,9 @@ class ResumeTap extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(height: SizeConfig.defaultSize),
-        const Education(),
-        SizedBox(height: SizeConfig.defaultSize),
         const Experience(),
+        SizedBox(height: SizeConfig.defaultSize),
+        const Education(),
         SizedBox(height: SizeConfig.defaultSize),
         const ResearchExperience(),
       ],

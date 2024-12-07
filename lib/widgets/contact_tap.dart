@@ -17,6 +17,7 @@ class ContactTap extends StatefulWidget {
 class _ContactTapState extends State<ContactTap> {
   final _formKey = GlobalKey<FormState>();
 
+  bool isLoading = false;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
@@ -30,7 +31,12 @@ class _ContactTapState extends State<ContactTap> {
   }
 
   void _submitForm() async {
+    if (isLoading) return;
+
     if (_formKey.currentState!.validate()) {
+      setState(() {
+        isLoading = true;
+      });
       try {
         final response = await sendEmail(
           email: _emailController.text,
@@ -43,6 +49,9 @@ class _ContactTapState extends State<ContactTap> {
         showSnackBar(
             context, 'Oh No!', 'Failed to send email! try again.', false);
       }
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 
@@ -157,19 +166,19 @@ class _ContactTapState extends State<ContactTap> {
                       children: [
                         const FaIcon(
                           FontAwesomeIcons.solidPaperPlane,
-                          color: Color.fromARGB(255, 136, 78, 253),
+                          color: Color(0xFF884EFD),
                           size: 18,
                         ),
                         SizedBox(width: SizeConfig.defaultSize!),
                         Text(
-                          'Send Message',
+                          isLoading ? "Please wait.." : 'Send Message',
                           style: AppStyles.styleNormal15(context).copyWith(
                               color: const Color.fromARGB(255, 136, 78, 253),
                               fontSize: 16),
                         ),
                       ],
                     )),
-              )
+              ),
             ],
           ),
         ),
