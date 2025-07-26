@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/models/project.dart';
 import 'package:portfolio/utils/app_styles.dart';
 import 'package:portfolio/utils/constants.dart';
@@ -21,7 +22,9 @@ class _ProjectItemState extends State<ProjectItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await urlLauncher(Uri.parse(widget.project.link));
+        if (widget.project.link != '') {
+          await urlLauncher(Uri.parse(widget.project.link));
+        }
       },
       onHover: (value) {
         setState(() {
@@ -60,27 +63,106 @@ class _ProjectItemState extends State<ProjectItem> {
                   ),
                 ),
               ),
-              AnimatedOpacity(
-                opacity: isHovered ? 1.0 : 0.0,
-                duration: const Duration(milliseconds: 150),
-                child: Container(
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: kborderRaduis12,
-                    color: kBackgroundColor,
-                  ),
-                  padding: const EdgeInsets.all(12),
-                  child: Center(
-                    child: Transform.scale(
-                      scale: isHovered ? 1.0 : 0.0,
-                      child: const Icon(
-                        Icons.visibility,
-                        color: Color.fromARGB(255, 136, 78, 253),
+              widget.project.link == ''
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedOpacity(
+                          opacity: isHovered ? 1.0 : 0.0,
+                          duration: const Duration(milliseconds: 150),
+                          child: GestureDetector(
+                            onTap: () async {
+                              if (widget.project.link == '') {
+                                await urlLauncher(Uri.parse(
+                                    widget.project.playStoreUrl ?? ''));
+                              }
+                            },
+                            child: Container(
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: kborderRaduis12,
+                                color: kBackgroundColor,
+                              ),
+                              padding: const EdgeInsets.all(12),
+                              child: Center(
+                                child: Transform.scale(
+                                  scale: isHovered ? 1.0 : 0.0,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: SvgPicture.asset(
+                                      'assets/images/playstore.svg',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: SizeConfig.defaultSize! * 2,
+                        ),
+                        AnimatedOpacity(
+                          opacity: isHovered ? 1.0 : 0.0,
+                          duration: const Duration(milliseconds: 150),
+                          child: GestureDetector(
+                            onTap: () async {
+                              if (widget.project.link == '') {
+                                await urlLauncher(Uri.parse(
+                                    widget.project.appStoreUrl ?? ''));
+                              }
+                            },
+                            child: Container(
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: kborderRaduis12,
+                                color: kBackgroundColor,
+                              ),
+                              padding: const EdgeInsets.all(12),
+                              child: Center(
+                                child: Transform.scale(
+                                  scale: isHovered ? 1.0 : 0.0,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: SvgPicture.asset(
+                                      'assets/images/appstore.svg',
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                  ),
+                                  // const Icon(
+                                  //   Icons.store,
+                                  //   color: Color.fromARGB(255, 136, 78, 253),
+                                  // ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  : AnimatedOpacity(
+                      opacity: isHovered ? 1.0 : 0.0,
+                      duration: const Duration(milliseconds: 150),
+                      child: Container(
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: kborderRaduis12,
+                          color: kBackgroundColor,
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: Center(
+                          child: Transform.scale(
+                            scale: isHovered ? 1.0 : 0.0,
+                            child: const Icon(
+                              Icons.visibility,
+                              color: Color.fromARGB(255, 136, 78, 253),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
             ],
           ),
           SizedBox(height: SizeConfig.defaultSize),

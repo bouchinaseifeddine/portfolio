@@ -47,6 +47,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+dependency_overrides:
+  # image:
+  #   git:
+  #     url: https://github.com/bouchinaseifeddine/image.git
+  #     ref: main
+
 flutter_native_splash:
   android: false
   ios: false

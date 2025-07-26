@@ -2,6 +2,34 @@ import 'package:portfolio/models/project.dart';
 
 final List<Project> projects = [
   Project(
+    name: 'Delivoc',
+    description: 'App to send packages with travelers.',
+    link: '',
+    appStoreUrl: 'https://apps.apple.com/us/app/delivoc/id1641010103',
+    playStoreUrl:
+        'https://play.google.com/store/apps/details?id=com.app.delivoc',
+    image: 'assets/images/delivoc.png',
+  ),
+  Project(
+    name: 'Arabyati',
+    description:
+        'Educational app designed to teach Arabic to non-native speakers',
+    link: '',
+    appStoreUrl: 'https://apps.apple.com/dz/app/arabyati/id6740172110',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.arabiyati',
+    image: 'assets/images/arabyati.png',
+  ),
+  Project(
+    name: 'Khutbah Translation',
+    description: 'App to translate Khutbahs in real-time',
+    appStoreUrl:
+        'https://apps.apple.com/dz/app/khutbah-translation/id6746091766',
+    playStoreUrl:
+        'https://play.google.com/store/apps/details?id=com.itsourceone.khutbah.translation',
+    link: '',
+    image: 'assets/images/khutbah-translation.png',
+  ),
+  Project(
     name: 'Balagh',
     description: 'Flutter, Firebase, Nodejs, Machine Learning',
     link: 'https://github.com/bouchinaseifeddine/balagh',
