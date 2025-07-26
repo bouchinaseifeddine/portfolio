@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   auto_height_grid_view: ^1.0.0
+  cached_network_image: ^3.4.1
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
@@ -47,12 +48,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-dependency_overrides:
-  # image:
-  #   git:
-  #     url: https://github.com/bouchinaseifeddine/image.git
-  #     ref: main
-
+dependency_overrides: null
+# image:
+#   git:
+#     url: https://github.com/bouchinaseifeddine/image.git
+#     ref: main
 flutter_native_splash:
   android: false
   ios: false
