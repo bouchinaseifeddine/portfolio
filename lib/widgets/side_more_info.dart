@@ -39,8 +39,8 @@ class SideMoreInfo extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: InkWell(
                       onTap: () async {
-                        await urlLauncher(Uri.parse(
-                            'mailto:bouchinaseifeddine@gmail.com?subject=News&body=New%20plugin'));
+                        await urlLauncher(
+                            Uri.parse('mailto:bouchinaseifeddine@gmail.com'));
                       },
                       child: Text(
                         'bouchinaseifeddine@gmail.com',
@@ -83,10 +83,10 @@ class SideMoreInfo extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: InkWell(
                       onTap: () async {
-                        urlLauncher(Uri.parse('tel:+213560708476'));
+                        urlLauncher(Uri.parse('tel:+4367763684823'));
                       },
                       child: Text(
-                        '+213 560708476',
+                        '+43 677 63684823',
                         maxLines: 1,
                         textAlign: TextAlign.start,
                         style: AppStyles.styleLight15(context).copyWith(
@@ -126,7 +126,7 @@ class SideMoreInfo extends StatelessWidget {
                   FittedBox(
                     fit: BoxFit.scaleDown,
                     child: Text(
-                      'Drean, Tarf, DZ',
+                      'Innsbruck, Austria',
                       maxLines: 1,
                       style: AppStyles.styleLight15(context).copyWith(
                         color: Colors.white,

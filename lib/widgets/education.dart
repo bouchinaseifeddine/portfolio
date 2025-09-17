@@ -18,6 +18,14 @@ class Education extends StatelessWidget {
         isHeader: false,
         isFirst: false,
         isLast: false,
+        title: 'University of innsbruck, Software Engineering',
+        text: 'Started Master\'s studies in Software Engineering.',
+        date: 'September 2025 — Present',
+      ),
+      MyTimeLineTile(
+        isHeader: false,
+        isFirst: false,
+        isLast: false,
         title: 'University of Annaba, Computer Science Department',
         text:
             'Pursuing a Bachelor\'s degree in Computer Science at Badji Mokhtar University in Annaba. This comprehensive program covers a wide range of subjects including algorithms, data structures, software development, and artificial intelligence. The curriculum is designed to provide a solid foundation in both theoretical and practical aspects of computer science, preparing students for the dynamic field of technology.',

@@ -20,8 +20,8 @@ class Experience extends StatelessWidget {
         isLast: false,
         title: 'Software Devaloper - IT Source One, Amman, Jordan',
         text:
-            'I am part of the remote flutter team, working on building multiple applications with a focus on creating user-friendly and high-performance solutions. My responsibilities include designing and implementing features, optimizing app performance, and collaborating with cross-functional teams to achieve project goals.',
-        date: 'July 2024 — Present',
+            'As a part of the remote flutter team, worked on building multiple applications with a focus on creating user-friendly and high-performance solutions. My responsibilities include designing and implementing features, optimizing app performance, and collaborating with cross-functional teams to achieve project goals.',
+        date: 'July 2024 — September 2025',
       ),
       MyTimeLineTile(
         isHeader: false,

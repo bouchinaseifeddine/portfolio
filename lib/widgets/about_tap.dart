@@ -20,7 +20,7 @@ class AboutTap extends StatelessWidget {
         SizedBox(height: SizeConfig.defaultSize),
         Text(
             style: AppStyles.styleLight15(context),
-            'I\'m passionate mobile and web developer with 1.5 years of hands-on experience in creating websites, mobile apps, problem solving and more. I\'m particularly interested in mobile development, and I\'m fascinated by the capabilities of the Flutter framework.'),
+            'I\'m passionate mobile and web developer with 2 years of hands-on experience in creating  mobile apps, websites, problem solving and more. I\'m particularly interested in mobile development, and I\'m fascinated by the capabilities of the Flutter framework.'),
         SizedBox(height: SizeConfig.defaultSize),
         Text(
             style: AppStyles.styleLight15(context),
